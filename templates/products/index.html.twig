@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Wszystkie Produkty
+{% endblock %}
+{% block body %}
+	<h1>Wszystkie Produkty</h1>
+	{% if products %}
+		<table id="products" class="table table-striped">
+			<thead>
+				<tr>Nazwa</tr>
+			</thead>
+			<tbody>
+				{% for product in products %}
+					<tr>
+						<td>{{ product. nazwa }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<a href="/filter" class="btn btn-danger">Filtruj</a>
+	{% else %}
+		<h2>Brak Produktów do wyświetlenia</h2>
+	{% endif %}
+{% endblock %}
+{% block javascripts %}
+	<script src="/js/main.js" type="text/javascript"></script>
+{% endblock %}
